@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <style>
+      :root {
+        --text-color-light: black;
+        --bg-color-light: azure;
+        --text-color-dark: azure;
+        --bg-color-dark: black;
+      }
+      @media (prefers-color-scheme: light) {
+        body {
+          color: var(--text-color-light);
+          background-color: var(--bg-color-light);
+        }
+      }
+      @media (prefers-color-scheme: dark) {
+        body {
+          color: var(--text-color-dark);
+          background-color: var(--bg-color-dark);
+        }
+      }
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 20px;
+      }
+      .title h1 {
+        margin-left: 15px;
+        color: inherit;
+      }
+      .blinker {
+        font-size: 32px;
+        animation: blink 2s step-start infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+      .button-role-container {
+        margin: 20px 0;
+        text-align: center;
+      }
+      .café-button {
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        border: 1px solid azure;
+        cursor: pointer;
+        margin-top: 10px;
+        width: 200px;
+        padding: 15px 24px;
+        font-size: 16px;
+        text-decoration: none;
+        transition: background-color 0.15s, color 0.15s;
+        display: inline-block;
+      }
+      .café-button:hover {
+        background-color: rgb(255, 255, 255);
+        color: black;
+        border: 1px solid black;
+      }
+      .roles {
+        width: 360px;
+        line-height: 1.6;
+        font-size: 16px;
+        margin: 10px auto 0;
+        color: inherit;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <h1>Amateur Art Lovers</h1>
+    </div>
+    <div class="button-role-container">
+      <a href="Artist.html" class="café-button">I'm an Amateur-Artist</a>
+      <p class="roles">
+        Als Amateurkünstler:innen kannst du hier deine Kunstwerke einreichen ...
+      </p>
+    </div>
+    <div class="button-role-container">
+      <a href="Cafés.html" class="café-button">I'm a Café-Manager</a>
+      <p class="roles">
+        Als Cafébetreiber:in erhältst du exklusiven Zugriff auf den Katalog ...
+      </p>
+    </div>
+    <div class="button-role-container">
+      <a href="Buyer.html" class="café-button">I'm a Café/Art-Lover</a>
+      <p class="roles">
+        Als Café-Besucher:innen kannst du ein Kunstwerk erwerben ...
+      </p>
+    </div>
+  </body>
+</html>

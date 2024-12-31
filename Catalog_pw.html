@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Protected Page</title>
+    <style>
+      body {
+        font-family: Helvetica;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #000000;
+      }
+
+      #password-section,
+      #content-section {
+        display: none;
+        text-align: center;
+      }
+
+      #password-section.active,
+      #content-section.active {
+        display: block;
+      }
+
+      .container {
+        width: 250px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        color: azure;
+        background-color: rgb(0, 0, 0);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .password-input {
+        width: calc(100% - 20px); /* Adjust width for padding consistency */
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box; /* Ensures padding is included in width */
+        margin-bottom: 10px; /* Add spacing below input field */
+      }
+
+      .submit-button {
+        background-color: #000000;
+        color: azure;
+        padding: 10px 0;
+        border: ;
+        border-color: azure;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 30%;
+      }
+      .title {
+        font-size: 30;
+        color: azure;
+      }
+      .error {
+        color: red;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="password-section" class="container active">
+      <h2 class="title">Le Catalogue</h2>
+      <input
+        type="password"
+        id="password-input"
+        class="password-input"
+        placeholder="Password"
+      />
+      <button onclick="checkPassword()" class="submit-button">let's go</button>
+      <p id="error-message" class="error"></p>
+    </div>
+
+    <div id="content-section" class="container">
+      <h2>Protected Content</h2>
+      <p>Welcome to the protected content area!</p>
+      <p><a href="Catalog.html">Click</a> to access the catalog</p>
+    </div>
+
+    <script>
+      const correctPassword = "starkespasswort"; // Set your password here
+
+      function checkPassword() {
+        const inputPassword = document.getElementById("password-input").value;
+        const errorMessage = document.getElementById("error-message");
+        const passwordSection = document.getElementById("password-section");
+        const contentSection = document.getElementById("content-section");
+
+        if (inputPassword === correctPassword) {
+          // Hide password input section and show content section
+          sessionStorage.setItem("authenticated", "true");
+          window.location.href = "Catalog.html";
+        } else {
+          // Display error message
+          errorMessage.textContent = "Incorrect password. Please try again.";
+        }
+      }
+    </script>
+  </body>
+</html>

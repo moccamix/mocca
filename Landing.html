@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+      body {
+        color: light-dark(black, azure);
+        background-color: light-dark(azure, black);
+        font-family: Helvetica;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .title {
+        display: inline-block;
+        margin-left: 15px;
+        color: azure;
+      }
+      .Party {
+        display: inline-block;
+      }
+      .roles {
+        width: 360px; /* Increased width of the roles and info boxes */
+        text-align: left;
+        display: inline-block; /* Justified text */
+        line-height: 1.6;
+        vertical-align: top;
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: azure;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.9
+        ); /* Slight transparency for the background */
+        padding: 10px;
+      }
+      .café-ffs {
+        align-items: center;
+        display: inline-block;
+      }
+      .café-ffs1 {
+        align-items: center;
+        display: inline-block;
+      }
+      .café-button {
+        vertical-align: text-top;
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        border: 1px solid azure;
+        cursor: pointer;
+        margin-top: 30px; /* Margin around buttons */
+        width: 200px;
+        padding: 15px 24px; /* Increased padding for larger buttons */
+        font-size: 16px; /* Increased font size for buttons */
+        transition: background-color 0.15s, color 0.15s;
+      }
+
+      .café-button:hover {
+        background-color: rgb(255, 255, 255);
+        color: black;
+        border: 1px solid black;
+      }
+
+      .café-button:active {
+        background-color: rgb(0, 0, 0);
+        color: azure;
+      }
+      a {
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <h1>amateur art</h1>
+      <h2>lovers</h2>
+    </div>
+    <div class="Party">
+      <div class="café-ffs1">
+        <button class="café-button">
+          <a href="Artist.html" style="text-decoration: none">Amateur-Artist</a>
+        </button>
+      </div>
+    </div>
+    <div class="Party">
+      <div class="café-ffs">
+        <button class="café-button">
+          <a href="Cafés.html" style="text-decoration: none">Café-Manager</a>
+        </button>
+      </div>
+    </div>
+    <div class="Party">
+      <div class="café-ffs">
+        <button class="café-button">
+          <a href="Buyer.html" style="text-decoration: none">Art-Enthusiast</a>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
