@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urban Expresso</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+
+      body {
+        color: light-dark(black, azure);
+        background-color: light-dark(azure, black);
+        font-family: Helvetica, Arial, sans-serif;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+      }
+
+      .title {
+        text-align: center; /* Center-align the title text */
+        color: azure;
+        margin: 20px 0;
+      }
+
+      .Party {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Add spacing between buttons */
+        margin: 20px 0;
+      }
+
+      .roles {
+        width: 90%; /* Adjust to take most of the screen width */
+        max-width: 360px; /* Limit the width */
+        text-align: left;
+        line-height: 1.6;
+        font-size: 16px;
+        margin: 10px auto;
+        color: azure;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 10px;
+        border-radius: 8px; /* Add rounded corners */
+      }
+
+      .café-button {
+        vertical-align: text-top;
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        border: 1px solid azure;
+        cursor: pointer;
+        margin-top: 10px;
+        width: 90%; /* Make the button width responsive */
+        max-width: 200px; /* Limit the width for larger screens */
+        padding: 15px 24px;
+        font-size: 16px;
+        transition: background-color 0.15s, color 0.15s;
+        text-align: center; /* Center-align button text */
+      }
+
+      .café-button:hover {
+        background-color: rgb(255, 255, 255);
+        color: black;
+        border: 1px solid black;
+      }
+
+      .café-button:active {
+        background-color: rgb(0, 0, 0);
+        color: azure;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        .café-button {
+          font-size: 14px;
+          padding: 12px 20px;
+        }
+        .title h1,
+        .title h2 {
+          font-size: 1.2em; /* Adjust font size for smaller screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <h1>Urban Expresso</h1>
+      <h2>too much amateur art goes unseen</h2>
+      <h2>we want to change that</h2>
+    </div>
+    <div>
+      <h3>Choose your (most relatable) character:</h3>
+    </div>
+    <div class="Party">
+      <div class="café-ffs1">
+        <button class="café-button">
+          <a href="Artist.html">Amateur Artist</a>
+        </button>
+      </div>
+      <div class="café-ffs">
+        <button class="café-button">
+          <a href="Cafés.html">Café Manager</a>
+        </button>
+      </div>
+      <div class="café-ffs">
+        <button class="café-button">
+          <a href="Buyer.html">Art / Café Lover</a>
+        </button>
+      </div>
+    </div>
+    <div class="roles">
+      <p>Expresso Union</p>
+      <p>More information:</p>
+      <ul>
+        <li><a href="#">For Artists</a></li>
+        <li><a href="#">For Café Owners</a></li>
+        <li><a href="#">For Art Lovers</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
