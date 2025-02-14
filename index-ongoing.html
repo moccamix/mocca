@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="intial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="stylesheet_else.css" />
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+      body {
+        color: light-dark(black, azure);
+        background-color: light-dark(azure, black);
+        font-family: Helvetica;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .title {
+        display: inline-block;
+        width: 200;
+        margin-top: 20px;
+        font-family: Helvetica;
+        font-size: 48px;
+        color: azure;
+      }
+      .title1 {
+        display: inline-block;
+        width: 200;
+        margin-top: 1px;
+        font-family: Helvetica;
+        font-size: 30px;
+        color: azure;
+        margin-bottom: 20px;
+      }
+      .Party {
+        display: inline-block;
+      }
+      .roles {
+        width: 360px; /* Increased width of the roles and info boxes */
+        text-align: left;
+        display: inline-block; /* Justified text */
+        line-height: 1.6;
+        vertical-align: top;
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: azure;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.9
+        ); /* Slight transparency for the background */
+        padding: 10px;
+      }
+      .café-ffs {
+        align-items: center;
+        display: inline-block;
+      }
+      .café-ffs1 {
+        align-items: center;
+        display: inline-block;
+      }
+      .café-button {
+        vertical-align: text-top;
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        border: 1px solid azure;
+        cursor: pointer;
+        margin-top: 30px; /* Margin around buttons */
+        width: 150px;
+        padding: 15px 15px; /* Increased padding for larger buttons */
+        font-size: 16px; /* Increased font size for buttons */
+        transition: background-color 0.15s, color 0.15s;
+      }
+      .café-button1 {
+        vertical-align: text-top;
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        border: 1px solid azure;
+        cursor: pointer;
+        margin-top: 45px; /* Margin around buttons */
+        width: 150px;
+        padding: 15px 15px; /* Increased padding for larger buttons */
+        font-size: 16px; /* Increased font size for buttons */
+        transition: background-color 0.15s, color 0.15s;
+      }
+      .café-button .café-button1 {
+        vertical-align: text-top;
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        border: 1px solid azure;
+        cursor: pointer;
+        margin-top: 30px; /* Margin around buttons */
+        width: 150px;
+        padding: 15px 15px; /* Increased padding for larger buttons */
+        font-size: 16px; /* Increased font size for buttons */
+        transition: background-color 0.15s, color 0.15s;
+      }
+
+      .café-button:hover .café-button1:hover {
+        background-color: rgb(255, 255, 255);
+        color: black;
+        border: 1px solid black;
+      }
+
+      .café-button:active .café-button1:active {
+        background-color: rgb(0, 0, 0);
+        color: azure;
+      }
+      a {
+        color: inherit;
+      }
+      .footnote {
+        margin-top: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">Urban</div>
+    <div class="title1">Expresso</div>
+    <div class="Party">
+      <div class="café-ffs1">
+        <button class="café-button">
+          <a href="Artist.html" style="text-decoration: none">Amateur Artist</a>
+        </button>
+      </div>
+    </div>
+    <div class="Party">
+      <div class="café-ffs">
+        <button class="café-button1">
+          <a href="Cafés.html" style="text-decoration: none">Café-Manager</a>
+        </button>
+      </div>
+    </div>
+    <div class="Party">
+      <div class="café-ffs">
+        <button class="café-button1">
+          <a href="Buyer.html" style="text-decoration: none">Art-Lovers</a>
+        </button>
+      </div>
+      <div class="footnote">
+        <p style="font-family: Helvetica; font-size: 9px">
+          &#169;2025 Expresso Union
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
