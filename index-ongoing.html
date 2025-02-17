@@ -1,47 +1,144 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const style = document.createElement("style");
+        style.innerHTML = `
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+                          }
+            to {
+              opacity: 1;
+                          }
+          }
+          
+          .info01, .arrow_01,
+          .info02, .arrow_02,
+          .info2, .arrow_2,
+          .info1, .arrow_1 {
+            opacity: 0;
+          }
+        `;
+        document.head.appendChild(style);
+
+        const elements = [
+          [".info01", ".arrow_01"],
+          [".info02", ".arrow_02"],
+          [".info2", ".arrow_2"],
+          [".info1", ".arrow_1"],
+        ];
+
+        elements.forEach((pair, index) => {
+          setTimeout(() => {
+            pair.forEach((selector) => {
+              const element = document.querySelector(selector);
+              if (element) {
+                element.style.animation = "fadeIn 1s ease-out forwards";
+              }
+            });
+          }, (index + 1) * 2000); // 1-second delay per pair
+        });
+      });
+    </script>
+
     <meta name="viewport" content="intial-scale=1, width=device-width" />
     <link rel="stylesheet" href="stylesheet_else.css" />
     <style>
-      :root {
-        color-scheme: light dark;
-      }
       body {
-        color: light-dark(black, azure);
-        background-color: light-dark(azure, black);
+        background-color: black;
+      }
+      .overallpage {
+        display: flex;
+        justify-content: center;
+        margin-top: 0px; /* Remove default margin */
+      }
+      .textpointingright {
+        background-color: black;
         font-family: Helvetica;
         align-items: center;
-        display: flex;
+        display: inline-block;
         flex-direction: column;
       }
-
-      .title {
+      .info01 {
+        font-family: Helvetica;
+        color: azure;
+        font-size: 14px;
+        margin-right: 5px;
+        margin-top: 107px;
+        text-align: right;
+      }
+      .info1 {
+        font-family: Helvetica;
+        color: azure;
+        margin-right: 5px;
+        text-align: right;
+        font-size: 14px;
+        margin-top: 97px;
+      }
+      .arrowspointingright {
+        background-color: black;
+        align-items: center;
         display: inline-block;
+        flex-direction: column;
+        margin-right: 5px;
+      }
+      .arrow_01 {
+        display: block;
+        width: 30px;
+      }
+      .arrow01img {
+        display: block;
+        width: 30px;
+        margin-top: 80px;
+        object-fit: contain;
+      }
+      .arrow_1 {
+        display: block;
+        width: 30px;
+      }
+      .arrow1img {
+        display: block;
+        width: 30px;
+        margin-top: 12px;
+        height: 152.664px;
+        object-fit: contain;
+      }
+      .center {
+        background-color: black;
+        font-family: Helvetica;
+        align-items: center;
+        display: inline-block;
+        flex-direction: column;
+      }
+      .title {
+        display: block;
         width: 200;
+        text-align: center;
         margin-top: 20px;
         font-family: Helvetica;
         font-size: 48px;
         color: azure;
       }
       .title1 {
-        display: inline-block;
+        display: block;
+        text-align: center;
         width: 200;
         margin-top: 1px;
         font-family: Helvetica;
         font-size: 30px;
         color: azure;
-        margin-bottom: 20px;
+        margin-bottom: 4px;
       }
       .Party {
-        display: inline-block;
+        display: block;
       }
       .roles {
         width: 360px; /* Increased width of the roles and info boxes */
         text-align: left;
-        display: inline-block; /* Justified text */
+        display: block; /* Justified text */
         line-height: 1.6;
-        vertical-align: top;
         font-size: 16px;
         margin-bottom: 5px;
         color: azure;
@@ -55,11 +152,11 @@
       }
       .café-ffs {
         align-items: center;
-        display: inline-block;
+        display: block;
       }
       .café-ffs1 {
         align-items: center;
-        display: inline-block;
+        display: block;
       }
       .café-button {
         vertical-align: text-top;
@@ -79,7 +176,7 @@
         color: rgb(255, 255, 255);
         border: 1px solid azure;
         cursor: pointer;
-        margin-top: 45px; /* Margin around buttons */
+        margin-top: 30px; /* Margin around buttons */
         width: 150px;
         padding: 15px 15px; /* Increased padding for larger buttons */
         font-size: 16px; /* Increased font size for buttons */
@@ -111,38 +208,118 @@
       a {
         color: inherit;
       }
-      .footnote {
-        margin-top: 300px;
+      .arrowspointingleft {
+        background-color: black;
+        align-items: center;
+        display: inline-block;
+        flex-direction: column;
+        margin-left: 5px;
+      }
+      .arrow_02 {
+        display: block;
+        width: 30px;
+      }
+      .arrow02img {
+        display: block;
+        margin-top: 71px;
+        height: 176.662px;
+        width: 30px;
+        object-fit: contain;
+      }
+      .arrow_2 {
+        display: block;
+        width: 30px;
+      }
+      .arrow2img {
+        display: block;
+        width: 30px;
+        margin-top: 11px;
+        height: 79.956px;
+        object-fit: contain;
+      }
+      .textpointingleft {
+        background-color: black;
+        font-family: Helvetica;
+        align-items: center;
+        display: inline-block;
+        flex-direction: column;
+      }
+      .info02 {
+        font-family: Helvetica;
+        color: azure;
+        margin-top: 143px;
+        margin-left: 5px;
+        text-align: left;
+        font-size: 14px;
+      }
+      .info2 {
+        font-family: Helvetica;
+        color: azure;
+        text-align: left;
+        font-size: 14px;
+        margin-left: 3px;
+        margin-top: 110px;
       }
     </style>
   </head>
   <body>
-    <div class="title">Urban</div>
-    <div class="title1">Expresso</div>
-    <div class="Party">
-      <div class="café-ffs1">
-        <button class="café-button">
-          <a href="Artist.html" style="text-decoration: none">Amateur Artist</a>
-        </button>
+    <div class="overallpage">
+      <div class="infopointingright">
+        <div class="info01">submits art<br />to catalog</div>
+        <div class="info1">texts the artist<br />an offer to buy</div>
       </div>
-    </div>
-    <div class="Party">
-      <div class="café-ffs">
-        <button class="café-button1">
-          <a href="Cafés.html" style="text-decoration: none">Café-Manager</a>
-        </button>
+      <div class="arrowspointingright">
+        <div class="arrow_01">
+          <img class="arrow01img" src="Image/pointsright.png" alt="" />
+        </div>
+        <div class="arrow_1">
+          <img class="arrow1img" src="Image/arrowpointsrightbiggo.png" alt="" />
+        </div>
       </div>
-    </div>
-    <div class="Party">
-      <div class="café-ffs">
-        <button class="café-button1">
-          <a href="Buyer.html" style="text-decoration: none">Art-Lovers</a>
-        </button>
+      <div class="center">
+        <div class="title">Urban</div>
+        <div class="title1">Expresso</div>
+        <div class="Party">
+          <div class="café-ffs1">
+            <button class="café-button">
+              <a href="Artist.html" style="text-decoration: none"
+                >Amateur Artist</a
+              >
+            </button>
+          </div>
+        </div>
+        <div class="Party">
+          <div class="café-ffs">
+            <button class="café-button1">
+              <a href="Cafés.html" style="text-decoration: none"
+                >Café-Manager</a
+              >
+            </button>
+          </div>
+        </div>
+        <div class="Party">
+          <div class="café-ffs">
+            <button class="café-button1">
+              <a href="Buyer.html" style="text-decoration: none">Art-Lovers</a>
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="footnote">
-        <p style="font-family: Helvetica; font-size: 9px">
-          &#169;2025 Expresso Union
-        </p>
+      <div class="arrowspointingleft">
+        <div class="arrow_02">
+          <img
+            class="arrow02img"
+            src="/Image/arrowpointingleftbiggo.png"
+            alt=""
+          />
+        </div>
+        <div class="arrow_2">
+          <img class="arrow2img" src="/Image/pointsleft.png" alt="" />
+        </div>
+      </div>
+      <div class="infopointingright">
+        <div class="info02">has free access<br />to all art</div>
+        <div class="info2">visits café,<br />discovers art</div>
       </div>
     </div>
   </body>
