@@ -1,7 +1,49 @@
 <!DOCTYPE html>
 <html>
   <head>
-        <meta name="viewport" content="intial-scale=1, width=device-width" />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const style = document.createElement("style");
+        style.innerHTML = `
+            @keyframes fadeIn {
+              from {
+                opacity: 0;
+              }
+              to {
+                opacity: 1;
+              }
+            }
+            
+            .info01, .arrow_01,
+            .info02, .arrow_02,
+            .info2, .arrow_2,
+            .info1, .arrow_1 {
+              opacity: 0;
+            }
+          `;
+        document.head.appendChild(style);
+
+        const elements = [
+          [".info01", ".arrow_01"],
+          [".info02", ".arrow_02"],
+          [".info2", ".arrow_2"],
+          [".info1", ".arrow_1"],
+        ];
+
+        elements.forEach((pair, index) => {
+          setTimeout(() => {
+            pair.forEach((selector) => {
+              const element = document.querySelector(selector);
+              if (element) {
+                element.style.animation = "fadeIn 1s ease-out forwards";
+              }
+            });
+          }, (index + 1) * 1500); // 1-second delay per pair
+        });
+      });
+    </script>
+
+    <meta name="viewport" content="intial-scale=1, width=device-width" />
     <link rel="stylesheet" href="stylesheet_else.css" />
     <style>
       body {
@@ -267,12 +309,12 @@
         <div class="arrow_02">
           <img
             class="arrow02img"
-            src="Image/arrowpointingleftbiggo.png"
+            src="/Image/arrowpointingleftbiggo.png"
             alt=""
           />
         </div>
         <div class="arrow_2">
-          <img class="arrow2img" src="Image/pointsleft.png" alt="" />
+          <img class="arrow2img" src="/Image/pointsleft.png" alt="" />
         </div>
       </div>
       <div class="infopointingright">
